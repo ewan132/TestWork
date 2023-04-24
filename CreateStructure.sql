@@ -1,6 +1,6 @@
 CREATE TABLE dbo.SKU(
 	Id int PRIMARY KEY CLUSTERED  IDENTITY NOT NULL
-	,Code int NOT NULL
+	,Code int unique NOT NULL
 	,[Name]  AS ('S'+cast(ID AS varchar(100))) PERSISTED
 	);
 
@@ -19,4 +19,5 @@ CREATE TABLE dbo.Family(
 	,PurchaseDate date DEFAULT GETDATE()
 	,DiscountValue int 
 	)
+
 
